@@ -3330,6 +3330,12 @@ details.schools-card:not([open]) {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.sidebar-nav::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .sidebar-section-title {
