@@ -60,6 +60,7 @@ function openSidebar() {
     if (window.innerWidth <= 768) {
         if (adminSidebar) adminSidebar.classList.add('open');
         if (sidebarOverlay) sidebarOverlay.classList.add('show');
+        if (adminLayout) adminLayout.style.overflow = 'hidden';
     } else {
         if (adminLayout) adminLayout.classList.toggle('sidebar-collapsed');
     }
@@ -68,6 +69,7 @@ function openSidebar() {
 function closeSidebar() {
     if (adminSidebar) adminSidebar.classList.remove('open');
     if (sidebarOverlay) sidebarOverlay.classList.remove('show');
+    if (adminLayout) adminLayout.style.overflow = '';
 }
 
 // Setup Event Listeners
@@ -1226,6 +1228,8 @@ function renderSchools(schools, totalPedidos) {
         item.style.display = 'flex';
         item.style.justifyContent = 'space-between';
         item.style.alignItems = 'center';
+        item.style.flexWrap = 'nowrap';
+        item.style.gap = '8px';
 
         const leftDiv = document.createElement('div');
         leftDiv.className = 'school-item-left';
@@ -1233,6 +1237,8 @@ function renderSchools(schools, totalPedidos) {
         leftDiv.style.alignItems = 'center';
         leftDiv.style.flexWrap = 'wrap';
         leftDiv.style.gap = '12px';
+        leftDiv.style.flex = '1';
+        leftDiv.style.minWidth = '0';
 
         const nameSpan = document.createElement('span');
         nameSpan.className = 'school-name';
@@ -2309,7 +2315,7 @@ function renderWeeklyGrid() {
             
             const evCard = document.createElement('div');
             evCard.className = 'cal-event-card';
-            evCard.style.borderLeftColor = color;
+            evCard.style.borderTop = `3px solid ${color}`;
             evCard.draggable = true;
             evCard.dataset.id = ev.id;
             

@@ -47,7 +47,8 @@ main, #main-content, #form-content {
 }
 
 html, body {
-    overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -3542,6 +3543,7 @@ details.schools-card:not([open]) {
     background: #fff;
     padding: 6px 8px;
     border-radius: 4px;
+    border: 1px solid #e2e8f0;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     font-size: 0.75rem;
     display: flex;
@@ -4054,6 +4056,3 @@ body.admin-dashboard {
     transform: translateY(-2px);
     background-color: #222222;
 }
-
-.hz-toast { touch-action: pan-y; }
-

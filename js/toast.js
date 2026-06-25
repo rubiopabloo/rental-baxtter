@@ -79,25 +79,39 @@
         closeBtn.addEventListener('click', dismiss);
         if (duration > 0) timer = setTimeout(dismiss, duration);
         
-        let startX = 0;
-        let startY = 0;
+        let startX = null;
         
         toast.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
+            toast.style.transition = 'none';
+        }, { passive: true });
+        
+        toast.addEventListener('touchmove', (e) => {
+            if (startX === null) return;
+            const currentX = e.touches[0].clientX;
+            const diffX = currentX - startX;
+            if (diffX > 0) {
+                toast.style.transform = `translateX(${diffX}px)`;
+                toast.style.opacity = Math.max(0, 1 - diffX / 150);
+            }
         }, { passive: true });
         
         toast.addEventListener('touchend', (e) => {
-            const endX = e.changedTouches[0].clientX;
-            const endY = e.changedTouches[0].clientY;
-            const diffX = endX - startX;
-            const diffY = Math.abs(endY - startY);
+            if (startX === null) return;
+            const currentX = e.changedTouches[0].clientX;
+            const diffX = currentX - startX;
+            startX = null;
             
-            // Swipe right (>50px) without scrolling vertically too much
-            if (diffX > 50 && diffY < 50) {
-                dismiss();
+            toast.style.transition = 'transform 0.2s ease-out, opacity 0.2s ease-out';
+            if (diffX > 60) {
+                toast.style.transform = 'translateX(100%)';
+                toast.style.opacity = '0';
+                setTimeout(dismiss, 200);
+            } else {
+                toast.style.transform = '';
+                toast.style.opacity = '';
             }
-        }, { passive: true });
+        });
 
         return toast;
     }
