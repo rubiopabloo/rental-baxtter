@@ -78,6 +78,34 @@
 
         closeBtn.addEventListener('click', dismiss);
         if (duration > 0) timer = setTimeout(dismiss, duration);
+        
+        let startX = 0;
+        let currentX = 0;
+        
+        toast.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            toast.style.transition = 'none';
+        }, { passive: true });
+        
+        toast.addEventListener('touchmove', (e) => {
+            currentX = e.touches[0].clientX;
+            const diffX = currentX - startX;
+            if (diffX > 0) {
+                toast.style.transform = `translateX(${diffX}px)`;
+                toast.style.opacity = Math.max(0, 1 - diffX / 200);
+            }
+        }, { passive: true });
+        
+        toast.addEventListener('touchend', (e) => {
+            toast.style.transition = '';
+            const diffX = currentX - startX;
+            if (diffX > 100) {
+                dismiss();
+            } else {
+                toast.style.transform = '';
+                toast.style.opacity = '';
+            }
+        });
 
         return toast;
     }

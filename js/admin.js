@@ -60,6 +60,7 @@ function openSidebar() {
     if (window.innerWidth <= 768) {
         if (adminSidebar) adminSidebar.classList.add('open');
         if (sidebarOverlay) sidebarOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
     } else {
         if (adminLayout) adminLayout.classList.toggle('sidebar-collapsed');
     }
@@ -68,6 +69,7 @@ function openSidebar() {
 function closeSidebar() {
     if (adminSidebar) adminSidebar.classList.remove('open');
     if (sidebarOverlay) sidebarOverlay.classList.remove('show');
+    document.body.style.overflow = '';
 }
 
 // Setup Event Listeners
@@ -1255,6 +1257,7 @@ function renderSchools(schools, totalPedidos) {
         const rightDiv = document.createElement('div');
         rightDiv.style.display = 'flex';
         rightDiv.style.alignItems = 'center';
+        rightDiv.style.flexShrink = '0';
 
         // Botón para eliminar colegio
         const cleanSchoolName = school.nombre.replace(' (Pre-carga)', '');
@@ -2170,7 +2173,7 @@ function renderCategories() {
     
     calendarCategories.forEach(cat => {
         const lbl = document.createElement('label');
-        lbl.style.cssText = `display: flex; align-items: center; gap: 8px; cursor: pointer; background: #f8fafc; padding: 6px 12px; border-radius: 8px; border: 1px solid #e2e8f0; border-left: 4px solid ${cat.color};`;
+        lbl.style.cssText = `display: flex; align-items: center; gap: 8px; cursor: pointer; background: #f8fafc; padding: 6px 12px; border-radius: 8px; border: 1px solid #e2e8f0;`;
         lbl.innerHTML = `<input type="checkbox" checked value="${cat.id}" class="cal-filter" style="width: 16px; height: 16px; accent-color: ${cat.color};">
                          <span style="flex-grow: 1; font-weight: 500;">${cat.nombre}</span>
                          <button type="button" class="btn-delete-cat" data-id="${cat.id}" style="background: none; border: none; cursor: pointer; color: #ef4444;" title="Eliminar"><i data-lucide="trash-2" style="width: 14px; height: 14px;"></i></button>`;
@@ -2309,13 +2312,59 @@ function renderWeeklyGrid() {
             const evCard = document.createElement('div');
             evCard.className = 'cal-event-card';
             evCard.style.borderLeftColor = color;
+            evCard.draggable = true;
+            evCard.dataset.id = ev.id;
             
-            let html = `<div class="ev-title">${escapeHtml(ev.titulo)}</div>`;
+            let html = `<div class="ev-title" style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <span>${escapeHtml(ev.titulo)}</span>
+                <button type="button" class="btn-delete-ev" data-id="${ev.id}" style="background:none;border:none;cursor:pointer;color:#ef4444;"><i data-lucide="x" style="width:14px;height:14px;"></i></button>
+            </div>`;
             if (ev.hora) html += `<div class="ev-time"><i data-lucide="clock" style="width:12px;height:12px;"></i> ${ev.hora.substring(0,5)}</div>`;
             if (ev.descripcion) html += `<div class="ev-desc">${escapeHtml(ev.descripcion)}</div>`;
             
             evCard.innerHTML = html;
+            
+            evCard.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', ev.id);
+            });
+            
             colDiv.appendChild(evCard);
+        });
+        
+        colDiv.querySelectorAll('.btn-delete-ev').forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.stopPropagation();
+                const evId = e.currentTarget.getAttribute('data-id');
+                if (await hzConfirm('¿Eliminar evento?', { confirmText: 'Eliminar' })) {
+                    if (typeof supabaseClient !== 'undefined' && supabaseClient) {
+                        await supabaseClient.from('calendar_events').delete().eq('id', evId);
+                        await loadCalendarData();
+                        renderWeeklyGrid();
+                    }
+                }
+            });
+        });
+        
+        colDiv.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            colDiv.style.background = '#f1f5f9';
+        });
+        
+        colDiv.addEventListener('dragleave', (e) => {
+            colDiv.style.background = '';
+        });
+        
+        colDiv.addEventListener('drop', async (e) => {
+            e.preventDefault();
+            colDiv.style.background = '';
+            const evId = e.dataTransfer.getData('text/plain');
+            if (evId) {
+                if (typeof supabaseClient !== 'undefined' && supabaseClient) {
+                    await supabaseClient.from('calendar_events').update({ fecha: dateStr }).eq('id', evId);
+                    await loadCalendarData();
+                    renderWeeklyGrid();
+                }
+            }
         });
         
         colDiv.addEventListener('click', (e) => {
