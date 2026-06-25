@@ -47,8 +47,7 @@ main, #main-content, #form-content {
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
+    overscroll-behavior: none;
 }
 
 body {
@@ -3541,7 +3540,6 @@ details.schools-card:not([open]) {
 /* Event Cards */
 .cal-event-card {
     background: #fff;
-    border-left: 4px solid #000;
     padding: 6px 8px;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -4056,3 +4054,6 @@ body.admin-dashboard {
     transform: translateY(-2px);
     background-color: #222222;
 }
+
+.hz-toast { touch-action: pan-y; }
+

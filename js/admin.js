@@ -60,7 +60,6 @@ function openSidebar() {
     if (window.innerWidth <= 768) {
         if (adminSidebar) adminSidebar.classList.add('open');
         if (sidebarOverlay) sidebarOverlay.classList.add('show');
-        document.body.style.overflow = 'hidden';
     } else {
         if (adminLayout) adminLayout.classList.toggle('sidebar-collapsed');
     }
@@ -69,7 +68,6 @@ function openSidebar() {
 function closeSidebar() {
     if (adminSidebar) adminSidebar.classList.remove('open');
     if (sidebarOverlay) sidebarOverlay.classList.remove('show');
-    document.body.style.overflow = '';
 }
 
 // Setup Event Listeners

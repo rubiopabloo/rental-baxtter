@@ -80,32 +80,24 @@
         if (duration > 0) timer = setTimeout(dismiss, duration);
         
         let startX = 0;
-        let currentX = 0;
+        let startY = 0;
         
         toast.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
-            toast.style.transition = 'none';
-        }, { passive: true });
-        
-        toast.addEventListener('touchmove', (e) => {
-            currentX = e.touches[0].clientX;
-            const diffX = currentX - startX;
-            if (diffX > 0) {
-                toast.style.transform = `translateX(${diffX}px)`;
-                toast.style.opacity = Math.max(0, 1 - diffX / 200);
-            }
+            startY = e.touches[0].clientY;
         }, { passive: true });
         
         toast.addEventListener('touchend', (e) => {
-            toast.style.transition = '';
-            const diffX = currentX - startX;
-            if (diffX > 100) {
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            const diffX = endX - startX;
+            const diffY = Math.abs(endY - startY);
+            
+            // Swipe right (>50px) without scrolling vertically too much
+            if (diffX > 50 && diffY < 50) {
                 dismiss();
-            } else {
-                toast.style.transform = '';
-                toast.style.opacity = '';
             }
-        });
+        }, { passive: true });
 
         return toast;
     }
