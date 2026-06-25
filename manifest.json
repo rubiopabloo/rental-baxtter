@@ -1,0 +1,24 @@
+{
+  "name": "Rental Baxtter - Seguimiento de Prenda",
+  "short_name": "Rental Baxtter",
+  "description": "Seguimiento de prendas y notificaciones para viajes de egresados",
+  "start_url": "/admin.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d3221d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/rentalicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/rentalicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

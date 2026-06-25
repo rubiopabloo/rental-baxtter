@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rental Baxtter | Cambios de indumentaria de nieve</title>
+
+    <!-- SEO (HAZE-WEB-STANDARD §2) -->
+    <meta name="description" content="Guía de uso y solicitud de cambios de indumentaria de nieve para pasajeros de Rental Baxtter. Revisá el estado del equipo y pedí un cambio de forma simple.">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- TODO al conectar dominio propio: agregar <link rel="canonical">, og:url y og:image absolutas -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rental Baxtter | Cambios de indumentaria de nieve">
+    <meta property="og:description" content="Revisá el estado de tu equipo de nieve y solicitá un cambio de indumentaria de forma simple.">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:site_name" content="Rental Baxtter">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Rental Baxtter | Cambios de indumentaria de nieve">
+    <meta name="twitter:description" content="Revisá el estado de tu equipo de nieve y solicitá un cambio de indumentaria de forma simple.">
+
+        <link rel="icon" type="image/png" href="images/rentalicon.png">
+    
+    <meta name="theme-color" content="#d3221d">
+    
+    <!-- PWA / MOBILE WEB APP META TAGS & ICONS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Rental Baxtter">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <link rel="apple-touch-icon" href="images/rentalicon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/rentalicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/rentalicon.png">
+    <link rel="icon" sizes="192x192" href="images/rentalicon.png">
+    <link rel="icon" sizes="512x512" href="images/rentalicon.png">
+
+    <link rel="stylesheet" href="styles/main.css?v=1.2">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // PWA Standalone Redirect
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+            window.location.replace('admin.html');
+        }
+        </script>
+</head>
+<body>
+        <div class="futuristic-bg">
+        <div class="grid-line line-1"></div>
+        <div class="grid-line line-2"></div>
+        <div class="grid-line line-3"></div>
+        <div class="grid-line line-4"></div>
+        <div class="grid-line line-5"></div>
+    </div>
+
+        <div id="onboarding-overlay" class="onboarding-overlay hidden">
+        <div class="onboarding-container">
+                        <div class="onboarding-slide active" id="onboarding-slide-1">
+                                <div class="onboarding-logo-header">
+                    <img src="images/logo.png" alt="Rental Baxtter" class="onboarding-logo-img">
+                </div>
+
+                                <div class="onboarding-title-row">
+                    <div class="onboarding-title-pill">
+                        <h2>ACLARACIONES IMPORTANTES</h2>
+                    </div>
+                </div>
+
+                <div class="onboarding-scroll-content">
+                    <div class="onboarding-text-body">
+                        <p>Una vez recibida la bolsa en el hotel, es fundamental verificar que el equipo esté completo. Cada pasajero debe contar con:</p>
+                        <ul class="onboarding-bullet-list">
+                            <li>Campera para nieve.</li>
+                            <li>Pantalón para nieve.</li>
+                            <li>Campera para barro.</li>
+                            <li>Pantalón para barro.</li>
+                            <li>1 par de botas.</li>
+                        </ul>
+
+                        <p>Cada pasajero es responsable de su equipo personal. Se recomienda no dejar las prendas tiradas ni fuera de la habitación.</p>
+                        
+                        <p>Al recibir la ropa, revisar que no presente daños importantes, como:</p>
+                        <ul class="onboarding-bullet-list">
+                            <li>Roturas de 5 cm o más.</li>
+                            <li>Cierres rotos.</li>
+                            <li>Falta de cordones o accesorios.</li>
+                            <li>Cualquier desperfecto que impida el uso normal de la prenda.</li>
+                        </ul>
+
+                        <p>Los cambios de prendas podrán realizarse únicamente dentro de las primeras 24 horas desde la entrega. Pasado ese plazo, no se aceptarán reclamos.</p>
+
+                        <p>Si alguna prenda presenta un defecto o rotura, sacar fotografías claras del inconveniente y adjuntarlas en el formulario correspondiente para su evaluación. Es muy importante que las imágenes permitan visualizar correctamente el estado de la prenda, ya que serán utilizadas por el equipo de Rental Baxtter para determinar si corresponde realizar un cambio o no.</p>
+
+                        <p>La ropa de nieve está destinada exclusivamente a actividades relacionadas con la nieve. Se recomienda no utilizarla para asistir a boliches, fiestas o excursiones que no incluyan actividades en la nieve.</p>
+
+                        <p>Los cambios de prendas deben ser realizados personalmente por cada pasajero. Asimismo, cada uno es responsable del cuidado y conservación de su equipo durante todo el viaje.</p>
+
+                        <p>Una vez realizada la solicitud de cambio, esta será evaluada por el equipo de Rental Baxtter. Para poder analizar correctamente cada caso, es fundamental completar toda la información solicitada en el formulario y adjuntar fotografías claras de la prenda. Posteriormente, se notificará al Líder o Coordinador del grupo si el cambio fue aprobado. En caso de ser necesario realizar el cambio, el pasajero deberá presentarse personalmente en el Rental en el horario informado por su Líder o Coordinador. Si se determina que la prenda no requiere reemplazo, la misma permanecerá con el pasajero y no será necesario realizar ninguna gestión adicional.</p>
+                    </div>
+                </div>
+                <div class="onboarding-actions">
+                    <button type="button" class="btn-onboarding-close" onclick="closeOnboarding()">Entendido / Comenzar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo_navbar.png" alt="Rental Baxtter" class="logo-img">
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+            </div>
+        </div>
+    </header>
+
+        <main id="main-content">
+                <section class="hero slide-up">
+            <img src="images/logo.png" alt="Rental Baxtter" class="hero-logo">
+            <h1 class="hero-title">Guía de uso y cambios de indumentaria</h1>
+            <p class="hero-description">Antes de solicitar un cambio, revisá las recomendaciones y verificá el estado del pedido.</p>
+            <div style="display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 10px;">
+                <button class="btn-primary btn-pill" onclick="scrollToChecklist()">
+                    REALIZAR UN CAMBIO
+                </button>
+                <button class="btn-primary btn-pill" onclick="openOnboarding()">
+                    VER GUÍA
+                </button>
+            </div>
+        </section>
+
+                <section class="info-section fade-in">
+            <div class="info-track">
+                <div class="card card-with-media active">
+                    <div class="card-media-wrapper">
+                        <img src="images/campera.png" alt="Campera" loading="lazy" class="card-img">
+                        <img src="images/pantalon.png" alt="Pantalón" loading="lazy" class="card-img">
+                        <div class="card-decor-lines"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title-area">
+                            <i data-lucide="shirt" class="card-icon"></i>
+                            <h3>Equipo para nieve</h3>
+                        </div>
+                        <ul>
+                            <li>Usarlos únicamente para nieve.</li>
+                            <li>Evitar arrastrarlos o sentarse sobre superficies abrasivas.</li>
+                            <li>Revisarlos al recibirlos.</li>
+                            <li>No usar en “Paintball”.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card card-with-media">
+                    <div class="card-media-wrapper">
+                        <img src="images/ropa_de_barro.png" alt="Ropa de Barro" loading="lazy" class="card-img single-img">
+                        <div class="card-decor-lines"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title-area">
+                            <i data-lucide="cloud-rain" class="card-icon"></i>
+                            <h3>Equipo para barro</h3>
+                        </div>
+                        <ul>
+                            <li>Es delicada y puede dañarse con facilidad.</li>
+                            <li>No tirar de cierres ni costuras.</li>
+                            <li>No usar en “A fondo”.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card card-with-media">
+                    <div class="card-media-wrapper">
+                        <img src="images/botas.png" alt="Botas" loading="lazy" class="card-img single-img">
+                        <div class="card-decor-lines"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title-area">
+                            <i data-lucide="footprints" class="card-icon"></i>
+                            <h3>Botas</h3>
+                        </div>
+                        <ul>
+                            <li>No dejarlas fuera de tu habitación.</li>
+                            <li>No utilizar botas demasiado grandes.</li>
+                            <li>Mantenerlas secas y limpias.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card card-with-media">
+                    <div class="card-media-wrapper">
+                        <img src="images/guantes.png" alt="Guantes" loading="lazy" class="card-img single-img">
+                        <div class="card-decor-lines"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-title-area">
+                            <i data-lucide="hand" class="card-icon"></i>
+                            <h3>Guantes</h3>
+                        </div>
+                        <ul>
+                            <li>Mantener el par junto.</li>
+                            <li>No prestarlos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+                <div class="carousel-controls fade-in">
+            <button class="carousel-btn" id="prev-btn" aria-label="Anterior">
+                <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+            <button class="carousel-btn" id="next-btn" aria-label="Siguiente">
+                <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+
+                <section id="checklist-section" class="checklist-section fade-in">
+            <h3>Antes de continuar</h3>
+            <div class="checklist-container">
+                <label class="checkbox-label">
+                    <input type="checkbox" class="confirm-check">
+                    <span>Revisé el estado del pedido.</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="confirm-check">
+                    <span>Confirmo que el talle no es adecuado o existe un problema.</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" class="confirm-check">
+                    <span>Comprendo la importancia del cuidado de la indumentaria.</span>
+                </label>
+            </div>
+            <button id="btn-show-form" class="btn-primary" disabled>
+                Continuar al formulario
+            </button>
+        </section>
+    </main>
+
+        <main id="form-content" class="hidden">
+        <section class="form-section slide-up">
+            <button class="btn-back" onclick="showMainContent()">
+                <i data-lucide="arrow-left"></i>
+                Volver
+            </button>
+            
+            <h2>Solicitud de cambio</h2>
+            <form id="change-form">
+                <!-- Honeypot anti-spam (HAZE-WEB-STANDARD §5): fuera de pantalla para humanos, visible para bots -->
+                <input type="text" name="website" id="f-honeypot" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                                <div class="form-section-title">
+                    <i data-lucide="user"></i>
+                    <span>Datos Personales</span>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nombre y apellido</label>
+                        <input type="text" id="f-nombre" required placeholder="Ej: Juan Pérez" maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label>DNI</label>
+                        <input type="text" id="f-dni" required placeholder="Ej: 45123456" maxlength="15" inputmode="numeric">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Colegio</label>
+                    <input type="text" id="f-colegio" required placeholder="Nombre de tu colegio" maxlength="100">
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label>Líder/Coordinador</label>
+                        <div class="select-wrapper">
+                            <select id="f-lider" required>
+                                <option value="" disabled selected>Cargando líderes...</option>
+                            </select>
+                            <i data-lucide="chevron-down" class="select-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Hotel</label>
+                        <div class="select-wrapper">
+                            <select id="f-hotel" required>
+                                <option value="" disabled selected>Seleccioná tu hotel</option>
+                                <option value="Aguas del sur">Aguas del sur</option>
+                                <option value="Bariloche SKI">Bariloche SKI</option>
+                                <option value="Cambria">Cambria</option>
+                                <option value="Monteclaro">Monteclaro</option>
+                                <option value="Patagonia LAGO">Patagonia LAGO</option>
+                                <option value="Patagonia SUR">Patagonia SUR</option>
+                                <option value="Alt interlaken">Alt interlaken</option>
+                            </select>
+                            <i data-lucide="chevron-down" class="select-icon"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Habitación</label>
+                        <input type="text" id="f-habitacion" required placeholder="Nº de hab." maxlength="20">
+                    </div>
+                </div>
+
+                                <div class="form-section-title" style="margin-top: 28px;">
+                    <i data-lucide="shirt"></i>
+                    <span>Prendas a cambiar</span>
+                </div>
+
+                <div class="prendas-tabs-bar" id="prendas-tabs-bar">
+                    <button type="button" class="prenda-tab active" data-prenda-index="0">Prenda 1</button>
+                    <button type="button" class="prenda-tab-add" id="btn-add-prenda" title="Agregar otra prenda">
+                        <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
+                    </button>
+                </div>
+
+                <div id="prendas-container">
+                                        <div class="prenda-panel active" data-prenda-index="0">
+                        <div class="form-group">
+                            <label>Prenda a cambiar</label>
+                            <div class="select-wrapper">
+                                <select class="f-prenda" required>
+                                    <option value="" disabled selected>Seleccioná una prenda</option>
+                                    <option value="Campera para nieve">Campera para nieve</option>
+                                    <option value="Pantalón para nieve">Pantalón para nieve</option>
+                                    <option value="Campera para barro">Campera para barro</option>
+                                    <option value="Pantalón para barro">Pantalón para barro</option>
+                                    <option value="Botas">Botas</option>
+                                    <option value="Guantes">Guantes</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="select-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Motivo</label>
+                            <div class="select-wrapper">
+                                <select class="f-motivo" required>
+                                    <option value="" disabled selected>Seleccioná el motivo</option>
+                                    <option value="Cambio de talle">Cambio de talle</option>
+                                    <option value="Rotura al recibirla">Rotura al recibirla</option>
+                                    <option value="Rotura durante actividad">Rotura durante actividad</option>
+                                    <option value="Pérdida">Pérdida</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                                <i data-lucide="chevron-down" class="select-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Observaciones</label>
+                            <textarea class="f-obs" rows="3" maxlength="500" placeholder="Agregá cualquier detalle adicional..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Fotos del problema <span style="font-weight:400; color: #999;">(obligatorio, máx. 3)</span></label>
+                            <div class="photo-upload-area">
+                                <input type="file" class="f-fotos-input" accept="image/*" multiple style="display:none">
+                                <div class="photo-upload-trigger">
+                                    <i data-lucide="camera" style="width: 28px; height: 28px; color: #999;"></i>
+                                    <span>Tocá para agregar fotos</span>
+                                    <small style="color: #999;">JPG, PNG — máximo 5 MB cada una</small>
+                                </div>
+                                <div class="photo-preview-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary" style="margin-top: 24px;">
+                    <i data-lucide="send"></i>
+                    Enviar solicitud
+                </button>
+            </form>
+    </main>
+
+        <footer>
+        <p>
+            Powered by <a href="https://hazecore.app" target="_blank" rel="noopener noreferrer" class="footer-link">HAZE</a>
+            |
+            <button id="btn-terms" class="footer-link-terms">Términos y Condiciones</button>
+            |
+            <a href="admin.html" class="footer-link-terms" style="text-decoration: none;">Administración</a>
+        </p>
+    </footer>
+
+        <div id="terms-modal" class="terms-modal hidden">
+        <div class="terms-modal-content">
+            <div class="terms-modal-header">
+                <h2>Términos y Condiciones de Uso</h2>
+                <button id="btn-close-terms" class="btn-close-modal">&times;</button>
+            </div>
+            <div class="terms-modal-body">
+                <p><strong>Última actualización:</strong> 22 de Junio de 2026</p>
+                
+                <h3>1. Aceptación de los términos</h3>
+                <p>Al acceder y utilizar la aplicación web de Baxtter Área Rental (en adelante, la "Aplicación"), el usuario acepta los presentes Términos y Condiciones. Si no está de acuerdo con alguno de ellos, deberá abstenerse de utilizar la Aplicación.</p>
+
+                <h3>2. Objeto de la Aplicación</h3>
+                <p>La Aplicación tiene como finalidad facilitar la gestión, consulta y solicitud de cambios del equipo entregado a los pasajeros durante su viaje. El uso de la Aplicación es exclusivamente informativo y operativo.</p>
+
+                <h3>3. Uso adecuado</h3>
+                <p>El usuario se compromete a:</p>
+                <ul>
+                    <li>Proporcionar información veraz y actualizada.</li>
+                    <li>Utilizar la Aplicación únicamente para los fines previstos.</li>
+                    <li>No realizar acciones que puedan afectar el funcionamiento de la plataforma.</li>
+                    <li>No intentar acceder a información de otros usuarios ni vulnerar la seguridad del sistema.</li>
+                </ul>
+
+                <h3>4. Datos personales y privacidad</h3>
+                <p>Los datos personales ingresados por los usuarios serán utilizados exclusivamente para:</p>
+                <ul>
+                    <li>Identificar al pasajero.</li>
+                    <li>Gestionar solicitudes y cambios de prendas.</li>
+                    <li>Mantener el correcto funcionamiento de la Aplicación.</li>
+                    <li>Brindar soporte y resolver inconvenientes relacionados con el servicio.</li>
+                </ul>
+                <p>La información proporcionada no será vendida, alquilada ni compartida con terceros con fines comerciales.</p>
+                <p>Los datos podrán ser tratados por proveedores tecnológicos que intervengan en el funcionamiento de la plataforma, quienes deberán garantizar medidas razonables de seguridad y confidencialidad.</p>
+
+                <h3>5. Seguridad de la información</h3>
+                <p>Se implementarán medidas razonables para proteger la información almacenada. Sin embargo, ningún sistema es completamente invulnerable, por lo que no puede garantizarse una seguridad absoluta frente a accesos no autorizados, fallas técnicas o eventos fuera del control de los administradores.</p>
+
+                <h3>6. Fotografías y archivos enviados</h3>
+                <p>Las imágenes, fotografías o archivos enviados por los usuarios a través de la Aplicación serán utilizados únicamente para verificar reclamos, cambios de prendas y resolver incidencias relacionadas con el servicio.</p>
+
+                <h3>7. Responsabilidad del usuario</h3>
+                <p>Cada pasajero es responsable del cuidado de su equipo y de la información proporcionada en la Aplicación. El uso indebido de la plataforma, la falsificación de información o la presentación de reclamos fraudulentos podrá derivar en la suspensión del acceso y en las medidas que correspondan.</p>
+
+                <h3>8. Disponibilidad del servicio</h3>
+                <p>Se procurará mantener la Aplicación operativa de forma continua. No obstante, podrán producirse interrupciones temporales por mantenimiento, actualizaciones, fallas técnicas o causas ajenas al control de los administradores.</p>
+
+                <h3>9. Propiedad intelectual</h3>
+                <p>El diseño, contenido, logotipos, imágenes, textos y funcionalidades de la Aplicación son propiedad de Baxtter Área Rental o de sus respectivos titulares y no podrán ser reproducidos, modificados o utilizados sin autorización previa.</p>
+
+                <h3>10. Modificaciones</h3>
+                <p>Los presentes Términos y Condiciones podrán ser modificados en cualquier momento. Las nuevas versiones entrarán en vigencia desde su publicación en la Aplicación.</p>
+
+                <h3>11. Limitación de responsabilidad</h3>
+                <p>La Aplicación constituye una herramienta de gestión y comunicación. Los administradores no serán responsables por pérdidas, daños o perjuicios derivados del uso indebido de la plataforma, fallas técnicas, errores de terceros o situaciones ajenas a su control.</p>
+
+                <h3>12. Legislación aplicable</h3>
+                <p>Los presentes Términos y Condiciones se regirán por las leyes de la República Argentina. Cualquier controversia será sometida a la jurisdicción de los tribunales competentes de la Provincia de Buenos Aires, salvo disposición legal en contrario.</p>
+
+                <h3>13. Contacto</h3>
+                <p>Ante cualquier consulta relacionada con la Aplicación o con estos Términos y Condiciones, los usuarios podrán comunicarse a través de los canales oficiales de atención de Baxtter Área Rental.</p>
+
+                <p style="margin-top: 24px; font-weight: bold; text-align: center;">Al utilizar la Aplicación, el usuario declara haber leído, comprendido y aceptado los presentes Términos y Condiciones.</p>
+            </div>
+        </div>
+    </div>
+
+        <div id="success-modal" class="success-modal hidden">
+        <div class="success-modal-content">
+            <div class="success-icon-container">
+                <i data-lucide="check-circle" class="success-icon"></i>
+            </div>
+            <h2 class="success-title">¡Solicitud enviada!</h2>
+            <p class="success-subtitle">Tu solicitud fue recibida y será analizada por el Staff del Rental y notificada a tu Líder</p>
+            <button id="btn-success-close" class="btn-success-close">Aceptar</button>
+        </div>
+    </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js?v=1.4"></script>
+    <script src="js/toast.js?v=1.1"></script>
+    <script src="js/app.js?v=1.8"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

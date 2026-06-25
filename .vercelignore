@@ -1,0 +1,8 @@
+# Archivos de desarrollo que NO deben publicarse en el sitio (HAZE-WEB-STANDARD §4/§8)
+_dev/
+*.py
+*.sql
+test-query.js
+encoding_rules.md
+README.md
+SECURITY_GUIDE.md
